@@ -9,11 +9,13 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ${OpenMP_CXX_FLAGS} -Wall")
 # Change this line if your Torch7 is installed elsewhere
 # /home/neoli365/torch/install/
 SET(TORCH_ROOT "/home/neoli365/torch/install")
+message(STATUS "TORCH_ROOT: " ${TORCH_ROOT}) 
 
 # Dependencies
 SET(SEARCH_PATHS "${TORCH_ROOT}/lib")
+message(STATUS "${SEARCH_PATHS} " ${SEARCH_PATHS}) 
 FIND_LIBRARY(THPP_LIBRARY thpp
-  PATHS ${SEARCH_PATHS})
+  PATHS "/home/neoli365/thpp/thpp/build")
 FIND_LIBRARY(LUAT_LIBRARY luaT
   PATHS ${SEARCH_PATHS})
 FIND_LIBRARY(TH_LIBRARY TH
